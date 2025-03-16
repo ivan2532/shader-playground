@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   previewTransform: {fileID: 997127954}
-  rotationSpeed: 25
+  rotationSpeed: 100
   rotationSmoothTime: 0.1
   zoomSpeed: 25
   minFov: 5

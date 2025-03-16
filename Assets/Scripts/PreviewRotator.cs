@@ -3,7 +3,7 @@ using UnityEngine;
 public class PreviewRotator : MonoBehaviour
 {
     [SerializeField] private Transform previewTransform;
-    [SerializeField] private float rotationSpeed = 25f;
+    [SerializeField] private float rotationSpeed = 100f;
     [SerializeField] private float rotationSmoothTime = 0.1f;
     [SerializeField] private float zoomSpeed = 25f;
     [SerializeField] private float minFov = 5f;
@@ -33,6 +33,8 @@ public class PreviewRotator : MonoBehaviour
 
     private void HandleInput()
     {
+        if (Input.GetMouseButtonDown(1)) previewTransform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        
         _isDragging = Input.GetMouseButton(0);
         _isPanning = Input.GetMouseButton(2);
         _currentRotationVelocity = _isDragging ? Input.mousePositionDelta * rotationSpeed : Vector3.zero;
